@@ -1,0 +1,16 @@
+{
+   "_id" : "zODJ",
+   "type": "bookmark",
+   "date" : "2010-05-25T18:47:17Z",
+   "url" : "http://couchdb.apache.org/",
+   "title" : "Apache CouchDB: The CouchDB Project",
+   "description" : "Apache CouchDB is a document-oriented database that can be queried and indexed in a MapReduce fashion using JavaScript. CouchDB also offers incremental replication with bi-directional conflict detection and resolution.  CouchDB provides a RESTful JSON API than can be accessed from any environment that allows HTTP requests. There are myriad third-party client libraries that make this even easier from your programming language of choice. CouchDB's built in Web administration console speaks directly to the database using HTTP requests issued from your browser.",
+   "tags" : [
+      "couchdb",
+      "database",
+      "REST",
+      "nosql",
+      "HTTP",
+      "JSON"
+   ]
+}

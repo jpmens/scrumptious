@@ -1,0 +1,22 @@
+{{>header}}
+
+<h2>Scrumptious bookmarks in CouchDB</h2>
+
+<p>
+
+<ol>
+
+	<li>If you haven't done so already, 
+<!-- Begin JS for bookmarklet -->
+
+<a href="javascript:(function(){t=document.title;d=''+(window.getSelection?window.getSelection():document.getSelection?document.getSelection():document.selection.createRange().text);if(!d)d=prompt('No text selected; enter description',t);if(!d)return 0;tags=prompt('Enter space-separated list of tags','');if(!tags)return 0;uri='{{url}}';f=document.createElement('form');f.method='post';f.action=uri;i0=document.createElement('input');i0.type='text';i0.name='url';i0.value=location.href;i1=document.createElement('input');i1.type='text';i1.name='description';i1.value=d;i2=document.createElement('input');i2.type='text';i2.name='title';i2.value=t||'no title';i3=document.createElement('input');i3.type='text';i3.name='tags';i3.value=tags;f.appendChild(i0);f.appendChild(i1);f.appendChild(i2);f.appendChild(i3);b=document.createElement('body');b.appendChild(f);f.submit();})()">drag me to your bookmarks bar</a> to install the bookmarklet.</li>
+
+<li>To bookmark a site, select some text from the page for its description and click on the bookmarklet.</li>
+<li>View the <a href="../_list/ls/all?limit=20">list of all your bookmarks</a>.</li>
+</ol>
+</p>
+
+<!-- End JS for bookmarklet -->
+
+{{>footer}}
+</body></html>

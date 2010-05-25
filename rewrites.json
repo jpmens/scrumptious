@@ -1,0 +1,10 @@
+[
+  {
+    "from": "/posts/add/*",
+    "to": "_update/post/*"
+  },
+  {
+    "from": "/ls",
+    "to": "_list/ls/bydate"
+  }
+]

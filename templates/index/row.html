@@ -1,0 +1,11 @@
+<li class="markslist">
+  <span class="docid"><a href="{{show}}">&gt;</a></span>
+  <span class="date">{{date}}</span>
+  <span class="link"><a href="{{url}}"><span class="linktitle">{{title}}</span></a></span>
+  <span class="lstags">
+	{{%IMPLICIT-ITERATOR iterator=tag}}
+	    {{#tags}}
+	  	<a class='tagw' href='{{bytag}}?key="{{tag}}"'>{{tag}}</a> 
+	    {{/tags}}
+  </span>
+</li>

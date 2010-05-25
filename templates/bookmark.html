@@ -1,0 +1,45 @@
+{{>header}}
+
+<h2>
+	<span class='docid'><a href="{{listall}}">&#x2672;</a></span>
+	<a href="{{url}}">{{title}}</a>
+</h2>
+
+
+<div id="bookmark">
+	<div class="tags">
+	{{%IMPLICIT-ITERATOR iterator=tag}}
+	  <div class="tagslist">
+	    <ul class="tagchain">
+	    {{#tags}}
+	  	<li><a href='{{bytag}}?key="{{tag}}"'><span class="tagitem">{{tag}}</span></a></li>
+	    {{/tags}}
+	    </ul>
+	  </div>
+  <div class="date">{{date}}</div>
+	</div>
+
+  <div class="desc">{{description}}
+  <div id="deletedoc"><a href="#">(delete bookmark)</a></div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	var id = '{{_id}}';
+	$db = $.couch.db('{{dbname}}');
+	$("#deletedoc").click(function() { 
+		$db.openDoc(id, {
+			success: function(doc) {  
+			       $db.removeDoc(doc, { success: function() {
+					window.location.href = '{{listall}}';
+					}});
+				}
+			});
+	});
+
+});
+</script>
+
+{{>footer}}
