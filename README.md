@@ -1,4 +1,14 @@
-Truly Scrumptious bookmarks in CouchDB
+# Truly Scrumptious bookmarks in CouchDB
+
+## Installation
+
+	git clone git@github.com:jpmens/scrumptious.git
+	cd scrumptious
+	couchapp push http://localhost:5984/scrumptious
+
+	> go to the URL shown
+
+## URLs
 
 Start here
 
