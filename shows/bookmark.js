@@ -10,8 +10,8 @@ function(doc, req)
 			cssdir:  path.asset('style'),
 			}; 
 	doc.footer	= {};
-	// doc.listall	= path.list('ls', 'bydate') + '?descending=true';
-	doc.listall	= path.list('ls', 'all') + '?limit=20';
+	//doc.listall	= path.list('ls', 'all') + '?limit=20';
+	doc.listall	= path.list('ls', 'bydate', { descending:true, limit:20});
 	doc.bytag	= path.list('ls', 'bytag');
 
 	doc.dbname	= req.info.db_name;
