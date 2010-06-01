@@ -22,3 +22,6 @@ Grab bookmarks file
 
 	http://localhost:5984/scrumptious/_design/app/_list/bookmarksfile/all
 
+## Credits
+
+* Uses [jquery-in-place-editor](http://code.google.com/p/jquery-in-place-editor/) 
