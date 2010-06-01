@@ -1,5 +1,10 @@
 # Truly Scrumptious bookmarks in CouchDB
 
+## Changes
+
+	2010-05-27 Incomplete: search keywords
+	2010-06-01 Support for in-place edits of Title and Description
+
 ## Installation
 
 	git clone git@github.com:jpmens/scrumptious.git
