@@ -4,14 +4,61 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <link rel="stylesheet" href="../../style/screen.css" type="text/css"/>
     <link rel="shortcut icon" href="../../style/favicon.ico">
+  <link rel="stylesheet" href="../../style/jquery-ui.css" type="text/css"/>
   <title>{{title}}</title>
 </head>
 <body>
 
-<!--
-	<h2><span class='docid'> <a href="bydate?descending=true">&#x2672;</a></span> Scrumptious Bookmarks in CouchDB</h2>
--->
 <h2><span class='docid'> <a href="bydate?limit=20&descending=true">&#x2672;</a></span> Scrumptious Bookmarks in CouchDB</h2>
 	
+<!-- begin search -->
+	  <script src="/_utils/script/json2.js"></script> <!-- from CouchDB /_utils -->
+	  <script src="/_utils/script/jquery.js?1.3.1"></script>
+	  <script src="/_utils/script/jquery.couch.js?0.9.0"></script>
+	  <script src="../../lib/jquery-ui.min.js"></script>
+
+	  <form id='searchform'>
+	  <input id='search' name='keyword' type='text' />
+	  </form>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    // http://docs.jquery.com/UI/API/1.8/Autocomplete
+    $('input#search').autocomplete({
+            source: function(request, response) {
+                    // response([ 'one', 'dos', 'trois' ]);
+                    $db = $.couch.db('scrumptious');
+                    var kw = request.term;
+                    $db.view('app/words', {
+                        keys: [ kw ],
+                        success: function(doc) {  
+
+                                // alert('hi ' + JSON.stringify(doc));
+                                var r = [];
+                                for (var i = 0; i < doc.rows.length; i++) {
+
+                                    var rv = {
+                                      label: doc.rows[i].value.title,
+                                      value: doc.rows[i].value.url,
+                                     };
+                                    r.push(rv);
+                                }
+                                response(r);
+                            }
+                        });
+
+                
+                    },
+            select: function(event, ui) {
+                    alert("selected: " + JSON.stringify(ui.item));
+                    return false;
+                }
+        });
+
+});
+</script>
+
+	<!-- end search -->
 
 <ul id='listall'>

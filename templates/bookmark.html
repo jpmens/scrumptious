@@ -2,7 +2,7 @@
 
 <h2>
 	<span class='docid'><a href="{{listall}}">&#x2672;</a></span>
-	<a href="{{url}}">{{title}}</a>
+	<a href="{{url}}">&gt;</a> <span id='edittitle'>{{title}}</span>
 </h2>
 
 
@@ -19,16 +19,18 @@
   <div class="date">{{date}}</div>
 	</div>
 
-  <div class="desc">{{description}}
-  <div id="deletedoc"><a href="#">(delete bookmark)</a></div>
+  <div class="desc"><p id='editdesc'>{{description}}</p>
+    <div id="deletedoc"><a href="#">(delete bookmark)</a></div>
   </div>
 
 </div>
 
 <script type="text/javascript">
 $(document).ready(function() {
+
 	var id = '{{_id}}';
 	$db = $.couch.db('{{dbname}}');
+
 	$("#deletedoc").click(function() { 
 		$db.openDoc(id, {
 			success: function(doc) {  
@@ -39,6 +41,37 @@ $(document).ready(function() {
 			});
 	});
 
+	function updatedoc(id, field, value)
+	{
+		$db.openDoc(id, {
+			success: function(doc) {
+					doc[field] = value;
+					$db.saveDoc(doc);
+				 }
+		});
+	}
+
+	// EDITS
+	$("#edittitle").editInPlace({
+		callback: function(unused, intext) {
+				updatedoc(id, 'title', intext);
+				return intext;
+			  },
+		show_buttons: false,
+		bg_over: "#79aad2",
+	});
+
+	$("#editdesc").editInPlace({
+		callback: function(unused, intext) {
+				updatedoc(id, 'description', intext);
+				return intext;
+			},
+		bg_over: "#79aad2",
+		field_type: "textarea",
+		textarea_rows: "15",
+		textarea_cols: "35",
+		show_buttons: false,
+	});
 });
 </script>
 

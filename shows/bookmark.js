@@ -8,6 +8,7 @@ function(doc, req)
 	doc.header	= {		// for partials
 			title: 'Scrumptious Bookmark ' + doc._id,
 			cssdir:  path.asset('style'),
+			libdir:  path.asset('lib'),
 			}; 
 	doc.footer	= {};
 	//doc.listall	= path.list('ls', 'all') + '?limit=20';
