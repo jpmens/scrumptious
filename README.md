@@ -1,5 +1,7 @@
 # Truly Scrumptious bookmarks in CouchDB
 
+This CouchApp implements a del.icio.us-like bookmarking application on top of CouchDB. URLs with title, tags, and description are POSTed into a CouchDB update-handler. Read about it and view some screenshots [here](http://blog.fupps.com/2010/05/25/truly-scrumptious-bookmarks-in-couchdb/).
+
 ## Changes
 
 	2010-05-27 Incomplete: search keywords
@@ -29,4 +31,11 @@ Grab bookmarks file
 
 ## Credits
 
-* Uses [jquery-in-place-editor](http://code.google.com/p/jquery-in-place-editor/) 
+This small app uses the following modules:
+
+* [mustache.js](http://github.com/janl/mustache.js)
+* [jQuery](http://jquery.com/)
+* [jQuery UI](http://jqueryui.com/)
+* [jquery-in-place-editor](http://code.google.com/p/jquery-in-place-editor/) 
+* [date parser](http://dansnetwork.com/2008/11/01/javascript-iso8601rfc3339-date-parser/)
+* [date format](http://blog.stevenlevithan.com/archives/date-time-format)
