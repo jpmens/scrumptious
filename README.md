@@ -39,3 +39,8 @@ This small app uses the following modules:
 * [jquery-in-place-editor](http://code.google.com/p/jquery-in-place-editor/) 
 * [date parser](http://dansnetwork.com/2008/11/01/javascript-iso8601rfc3339-date-parser/)
 * [date format](http://blog.stevenlevithan.com/archives/date-time-format)
+
+## License
+
+Copyright 2010 Jan-Piet Mens <jpmens@gmail.com>
+Licensed under the Apache License, Version 2.0.
