@@ -1,6 +1,6 @@
 # Truly Scrumptious bookmarks in CouchDB
 
-This CouchApp implements a del.icio.us-like bookmarking application on top of CouchDB. URLs with title, tags, and description are POSTed into a CouchDB update-handler. Read about it and view some screenshots [here](http://blog.fupps.com/2010/05/25/truly-scrumptious-bookmarks-in-couchdb/).
+This CouchApp implements a del.icio.us-like bookmarking application on top of CouchDB. URLs with title, tags, and description are POSTed into a CouchDB update-handler. Read about it and view some screenshots [here](http://jpmens.net/2010/05/25/truly-scrumptious-bookmarks-in-couchdb/).
 
 ## Changes
 
